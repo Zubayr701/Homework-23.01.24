@@ -1,0 +1,117 @@
+.about {
+    position: relative;
+    font-family: monospace;
+    margin-top: 122px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 40px;
+        width: 70%;
+        max-width: 974px;
+        height: 15px;
+        background-color: #e5ecf4;
+    }
+}
+
+
+.about__list {
+    @include flex-starter;
+    @include list-starter;
+    gap: 30px;
+}
+
+.about__item {
+    @include flex-starter;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 350px;
+}
+
+.about__item-img {
+    display: inline-block;
+    padding: 24px 29px;
+    background-color: #fcb72b;
+    border-radius: 50%;
+    margin-bottom: 40px;
+}
+
+.about__item-title {
+    color: #495567;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    /* 116.667% */
+    letter-spacing: -1.071px;
+    margin-bottom: 27px;
+}
+
+.about__item-text {
+    color: #939caa;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 25px;
+    /* 166.667% */
+}
+
+@media only screen and (max-width: 768px) {
+    .about::before {
+        content: none;
+    }
+
+    .about__list {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .about__item {
+        max-width: 85%;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    .about__item-main {
+        max-width: 400px;
+    }
+
+    .about__item-img:nth-child(1) {
+        position: relative;
+        margin-right: 20px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: -200px;
+            left: 40px;
+            width: 15px;
+            height: 200px;
+            background-color: #e5ecf4;
+        }
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .about__item {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .about__item-img {
+        padding: 14px 17px;
+
+        &>img {
+            width: 23px;
+            height: 28px;
+        }
+
+        &:nth-child(1)::before {
+            content: none;
+        }
+    }
+}
